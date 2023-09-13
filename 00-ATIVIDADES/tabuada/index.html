@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha Tabuada</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+          <div class="card mt-5">
+              <h2>Minha tabuada automática</h2>
+              <div class="mb-3">
+                <label>Digite o numero para a tabuada</label>
+                <input id="numero" type="number" class="form-control">
+              </div>
+              <div class="mb-3">
+                <select name="operacao" id="operacao" class="form-control">
+                    <option value="+">Adição</option>
+                    <option value="*">Multiplicação</option>
+                    <option value="-">Subtração</option>
+                    <option value="/">Divisão</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <button onclick="tabuada()" class="btn btn-primary">Gerar Tabuada</button>
+                <button onclick="limpar()" class="btn btn-danger">Limpar</button>
+
+              </div>   
+        </div>
+        <p id="tabuada"></p>
+      </div>
+    </div>
+
+   <script type="text/javascript">
+
+    function limpar(){   
+        document.getElementById("tabuada").innerHTML = '';
+    }
+
+    function tabuada(){
+     var numero = Number(document.getElementById("numero").value);
+     var operacao = document.getElementById("operacao").value;
+
+     switch (operacao) {
+        case "*":
+            for (let index = 1; index <= 10; index++) {
+              document.getElementById("tabuada").innerHTML += `${numero} * ${index} = ${numero * index} <br>`;         
+            }
+            break;
+        case "/":
+          var controle = 1;
+            for (let index = numero; controle <= 10; index = numero * controle) {
+              document.getElementById("tabuada").innerHTML += `${index} / ${numero} = ${index / numero} <br>`;  
+              controle++;       
+            }
+            break;
+        case "+":
+            for (let index = 1; index <= 10; index++) {
+              document.getElementById("tabuada").innerHTML += `${numero} + ${index} = ${numero + index} <br>`;         
+            }
+            break;
+        case "-":
+        var controle = 1;
+            for (let index = numero; controle <= 10; index = numero * controle) {
+              document.getElementById("tabuada").innerHTML += `${index} - ${numero} = ${index - numero} <br>`;  
+              controle++;       
+            }
+            break;
+     
+        default:
+            break;
+     }
+}
+ </script>
+ </head>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificando a média do aluno</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+          <div class="card mt-5">
+              <h2>Verficar se o aluno foi aprovado ou reprovado</h2>
+              <div class="mb-3">
+                <label>Digite a sua primeira nota</label>
+                <input id="nota1" type="number" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label>Digite a sua segunda nota</label>
+                <input id="nota2" type="number" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label>Digite a sua terceira nota</label>
+                <input id="nota3" type="number" class="form-control">
+              </div>
+              <div class="mb-3">
+                <button onclick="media()" class="btn btn-primary">Calcular média</button>
+              </div>   
+        </div>
+        <p id="media"></p>
+      </div>
+    </div>
+
+   <script type="text/javascript">
+
+    function media(){
+     var nota1 = Number(document.getElementById("nota1").value);
+     var nota2 = Number(document.getElementById("nota2").value);
+     var nota3 = Number(document.getElementById("nota3").value);
+
+     var media = (nota1 + nota2 + nota3)/3;
+
+     if (media >= 6) {
+        document.getElementById("media").innerHTML = `Aluno aprovado com média ${media} parabéns`;        
+     } else {
+        document.getElementById("media").innerHTML = `Aluno reprovado com média ${media} que pena`;        
+    }
+}
+ </script>
+ </head>
+</html>

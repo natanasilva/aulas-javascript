@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando Switch</title>
+</head>
+<body>
+    <h3>Calculando valores</h3>
+    <p id="valore"></p>
+    <script>
+        var num1 = Number(window.prompt("Digite o primeiro numero"));
+        var operacao =window.prompt("Digite o simbolo da operação ");
+        var num2 = Number(window.prompt("Digite o segundo numero"));
+
+       switch (operacao) {
+        case "+":
+            var soma = num1 + num2;
+            document.writeln(`O valor da soma dos numeros ${num1} + ${num2} é = ${soma}`);
+            break;
+        case "*":
+            var multiplicacao = num1 * num2;
+            document.writeln(`O valor da multiplicação dos numeros ${num1} * ${num2} é = ${multiplicacao}`);
+            break;
+         case "/":
+            var divisao = num1 / num2;
+            document.writeln(`O valor da divisão dos numeros ${num1} / ${num2} é = ${divisao}`);
+            break;
+         case "-":
+            var subtracao = num1 - num2;
+            document.writeln(`O valor da subtracao dos numeros ${num1} - ${num2} é = ${subtracao}`);
+            break;
+       
+        default:
+            break;
+       }
+    </script>
+</body>
+</html>

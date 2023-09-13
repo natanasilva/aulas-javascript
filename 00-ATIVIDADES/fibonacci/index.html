@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sequencia de Fibonacci</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"/>
+  </head>
+ <body>
+    <h6>Na matemática, os números de Fibonacci são os números que compõe a seguinte sucessão de números inteiros: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144</h6>
+   Exibir até o termo: <input id="numero" type="number"> <br />
+   <button onclick="fibonacci()">Exibir</button><br />
+   <div id='resposta'></div>
+   <script>function fibonacci(){
+    var termo = parseInt(document.getElementById('numero').value);
+    var resposta = document.getElementById('resposta');
+    var penultimo=0, ultimo=1;
+    var numero;
+  
+    if(termo <=2 ){
+     numero = termo-1;
+    }else {
+     for(var count=3 ; count<=termo ; count++){
+      numero = ultimo + penultimo;
+      penultimo = ultimo;
+      ultimo = numero;
+     }
+    resposta.innerHTML += numero;
+  }
+}
+  </script>
+ </body>
+</html>
